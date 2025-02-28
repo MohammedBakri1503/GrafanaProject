@@ -1,6 +1,5 @@
-package com.example;
+package com.example.controller;
 
-import com.example.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
