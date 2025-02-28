@@ -26,7 +26,6 @@ public class StockService {
                 .retrieve()
                 .bodyToMono(Map.class)
                 .block(); // Blocking call for simplicity (consider using async)
-
         // Extract latest stock price
         if (response != null && response.containsKey("Time Series (5min)")) {
             Map<String, Object> timeSeries = (Map<String, Object>) response.get("Time Series (5min)");
@@ -38,7 +37,7 @@ public class StockService {
             // Send stock price to AI model
             boolean isAnomaly = checkAnomaly(latestPrice);
 
-            if (!isAnomaly) {
+            if (isAnomaly) {
                 String alertMessage = "⚠️ Anomaly detected for " + symbol + " at " + latestTime +
                         "\nPrice: " + latestPrice;
                 alertService.sendAlert(alertMessage);
