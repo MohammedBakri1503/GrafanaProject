@@ -1,6 +1,7 @@
 name: API testing
 
 on:
+  push:
   workflow_dispatch:
 
 
