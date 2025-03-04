@@ -14,6 +14,7 @@ public class StockDataController {
 
     @GetMapping("/{symbol}")
     public Map<String, Object> getStockData(@PathVariable String symbol) {
-        return stockService.fetchStockData(symbol);
+        Map<String, Object> rawStockData = stockService.fetchStockDataFromTwelveData(symbol);
+        return stockService.processStockData(symbol, rawStockData);
     }
 }
