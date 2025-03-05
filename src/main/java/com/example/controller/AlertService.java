@@ -24,7 +24,7 @@ public class AlertService {
         email.setFrom("mohammedbakri1503@gmail.com"); // Must match your SMTP user
 
         mailSender.send(email);
-        System.out.println("📧 Alert sent to " + toEmail);
+        System.out.println("📧 Alert sent to " + toEmail);// add
     }
 }
 
