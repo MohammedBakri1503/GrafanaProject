@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Sample training data (simulating normal price ranges)
 sample_data = np.array([
-    [230], [235], [240], [245], [250],  # Normal stock prices
+    [2300], [2350], [2400], [2405], [2500],  # Normal stock prices
     [1000]  # Extreme anomaly (outlier)
 ])
 
