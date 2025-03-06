@@ -45,7 +45,7 @@ public class StockService {
         }
 
         if (!"ok".equals(stockData.get("status"))) {
-            return Map.of("error", "Invalid API response");
+            return Map.of("error", "Invalid API response"); //hi
         }
 
         Optional<Double> latestPrice = extractLatestStockPrice(stockData);
@@ -91,7 +91,7 @@ public class StockService {
      * Sends the stock price to the AI model for anomaly detection.
      */
     public boolean checkAnomaly(double price) {
-        Map<String, Object> request = Map.of("close", price);
+        Map<String, Object> request = Map.of("close", price);//HH
 
         try {
             Map<String, Boolean> response = webClient.post()

@@ -128,7 +128,7 @@ public class StockServiceTest2 {
         verify(alertService, times(0)).sendAlert(anyString());
     }*/
 
-    // ✅ **Test Case 6: Zero Price Stock Value**
+    //  **Test Case 6: Zero Price Stock Value**
     @Test
     void testFetchStockData_zeroPrice() {
         Map<String, Object> mockResponse = mockAlphaVantageResponse("0.00");
@@ -139,7 +139,7 @@ public class StockServiceTest2 {
         verify(alertService, times(0)).sendAlert(anyString());
     }
 
-    // ✅ **Test Case 7: Stock Symbol With Special Characters**
+    //  **Test Case 7: Stock Symbol With Special Characters**
     @Test
     void testFetchStockData_invalidSymbol() {
         Map<String, Object> mockResponse = mockAlphaVantageResponse("230.00");
@@ -149,7 +149,7 @@ public class StockServiceTest2 {
         assertNotNull(processedData);
     }
 
-    // ✅ **Test Case 8: API Returns Incomplete Data**
+    //  **Test Case 8: API Returns Incomplete Data**
     @Test
     void testFetchStockData_incompleteResponse() {
         Map<String, Object> mockResponse = Map.of("Time Series (5min)", Map.of("2024-02-26 10:00:00", Map.of()));
